@@ -13,7 +13,7 @@ function palindrome(str) {
 
 
   // // Solution #2
-  // let reversed = str.split("").reverse().join("");
+  // const reversed = str.split("").reverse().join("");
 
   // if (str === reversed){
   //   return true;
@@ -22,10 +22,16 @@ function palindrome(str) {
   //   return false;
   // }
 
-  // Solution #3
-  let reversed = str.split("").reduce((reverse, character) => character + reverse, "");
+
+  // // Solution #3
+  // let reversed = str.split("").reduce((reverse, character) => character + reverse, "");
   
-  return str === reversed ? true : false;
+  // // Returns boolean
+  // return str === reversed;
+
+
+  // Solution #4
+  return str.split("").every((character, index) => character === str[str.length - index - 1])
 
 }
 
