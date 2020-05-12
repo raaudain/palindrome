@@ -12,18 +12,23 @@ function palindrome(str) {
   // return str === reversed ? true : false;
 
 
-  // Solution #2
-  let reversed = str.split("").reverse().join("");
+  // // Solution #2
+  // let reversed = str.split("").reverse().join("");
 
-  if (str === reversed){
-    return true;
-  }
-  else{
-    return false;
-  }
+  // if (str === reversed){
+  //   return true;
+  // }
+  // else{
+  //   return false;
+  // }
+
+  // Solution #3
+  let reversed = str.split("").reduce((reverse, character) => character + reverse, "");
+  
+  return str === reversed ? true : false;
 
 }
 
 
-palindrome("abba");
-//palindrome("abcdefg");
+//palindrome("abba");
+palindrome("abcdefg");
